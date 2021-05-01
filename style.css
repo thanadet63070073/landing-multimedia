@@ -20,6 +20,7 @@ h3 {
 p {
     text-indent: 2%;
     font-size: 16px;
+    color:black;
 }
 img {
     background-repeat: no-repeat;
@@ -28,48 +29,77 @@ img {
 .title-contain {
     padding: 0% 10% 0% 10%;
     margin: auto;
-    background: grey;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 80%;
     height: 823px;
-    background-image:url("https://d33wubrfki0l68.cloudfront.net/0a619155c82b694e2267f3ed5c752919b707e33b/ef36f/static/svg_waves-3c1f0a785319462f6dce04d227eaf664.jpg");
+    background-image:url("https://media.discordapp.net/attachments/805709628515680266/837967760968646666/Pngtreethe_sun_shines_on_the_6063362.png?width=674&height=674");
     background-repeat: no-repeat;
+    background-size:cover;
+    animation:ocean 7s ease infinite alternate;
 }
+@keyframes ocean {
+    0%{background-color:#042836;}
+    25%{background-color:#0c6885;}
+    50%{background-color:#878385;}
+    75%{background-color:#6bc7d6;}
+    100%{background-color:#0a5b7c;}
+}
+
+.children{
+    height:480px;
+    text-align: center;
+    justify-content:center;
+}
+
 .title-button {
     display: block;
     padding: 16px;
     margin-top: 16px;
     width: 60%;
     text-align: center;
-    background: #008CBA;
+    background: yellowgreen;
     cursor: pointer;
+    border-radius: 10px;
 }
 .title-button:hover{
     background: #154c79;
     color:white;
 }
+
+
 .line {
-    width: 100%;
-    background: yellow;
-    height: 2px;
-    margin: 4% 0% 4% 0%;
+    width: 80%;
+    background:hsl(211, 79%, 58%, 60%);
+    height: 4px;
+    border-radius: 2px;
+    margin: 5% 10% 5% 10%;
+    animation: slide 4s infinite alternate linear;
 }
+
+@keyframes slide {
+    to{
+        transform:translateY(16px);
+    }
+}
+
 .material-contain-1 {
     padding: 5%;
     margin: auto;
     width: 80%;
     height: auto;
-    background-image:url("https://i.pinimg.com/originals/b9/c8/f8/b9c8f893c9a782033a01f47e0c0b1d6e.jpg");
+    /* background-image:url("https://www.nicepng.com/png/full/49-498173_gradient-background-png-website-background-image-png.png"); */
     background-repeat:no-repeat;
+    border-radius: 10px;
+    background-size:cover;
 }
 .column-text-contain {
     height: 240px;
     width: 100%;
 }
 .column-text {
-    opacity: 50%;
     word-wrap: break-word;
     float: left;
     padding: 1.665%;
@@ -98,7 +128,5 @@ img {
     margin: auto;
     width: 90%;
     height: auto;
-    background-image:url("https://i.stack.imgur.com/kzwT7.png");
-    background-repeat:no-repeat;
-    background-size:cover;
+    background:white;
 }
