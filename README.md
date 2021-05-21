@@ -1,5 +1,0 @@
-# landing-multimedia
-Hello World
-projecttttttttttttttttttttttttttttttttttttttt Noooooooooooooooooooooooooooooo
-testttttttttttttttttttttttttttttttttttttttttt
-ok
