@@ -49,7 +49,7 @@ h1 {
     font-size: 48px;
 }
 h2 {
-    font-size: 18px;
+    font-size: 28px;
 }
 h3 {
     font-size: 18px;
@@ -193,17 +193,24 @@ a{
     border-radius: 10px;
     background-size:cover;
 }
+
+.material-contain-1 p{
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .column-text-contain {
     height: 240px;
     width: 100%;
 }
+
 .column-text {
     display: block;
     word-wrap: break-word;
     float: left;
     padding: 1.665%;
     width: 30%;
-    height: 400px;
+    height: auto;
     background: white;
     overflow:auto;
 }
@@ -228,4 +235,9 @@ a{
     width: 90%;
     height: auto;
     background:white;
+}
+
+.material-contain-2 p{
+    font-size: 20px;
+    font-weight: bold;
 }
