@@ -1,9 +1,45 @@
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top:200px;
+    height: 100vh;
+    padding: 2em;
+    background: transparent;
+    color: white;
+}
+
+nav a {
+    display:block;
+    margin: 3em 0;
+}
+
 body {
     margin: auto;
     width: 100%;
     height: auto;
     background: white;
 }
+
+.tiptext{
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align:center;
+    border-radius:6px;
+    right:230px;
+    width:200px;
+}
+
+.btn:hover .tiptext{
+    visibility: visible;
+}
+
 h1, h2, h3, p {
     margin: 0;
     font-family: 'New Tegomin', serif;
@@ -26,6 +62,20 @@ p {
 img {
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.btn{
+    background-color: skyblue;
+    border: skyblue 1.5px solid;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background-color: white;
 }
 
 .title-contain {
