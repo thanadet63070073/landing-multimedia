@@ -291,7 +291,7 @@
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
       document.getElementById('background').style.backgroundSize = "auto 100%";
-          introduce == 6;
+          introduce = 6;
         }
         else if(junk > 0){
 			document.getElementById('txt').innerHTML = "Lose<br>คุณกำจัดขยะไม่หมด<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
@@ -299,7 +299,7 @@
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
       document.getElementById('background').style.backgroundSize = "auto 100%";
-          introduce == 6;
+          introduce = 6;
         }
         else if(junk == 0 && follower < 125){
 			document.getElementById('txt').innerHTML = "Lose<br>คุณกำจัดขยะหมดแต่ก็ยังมีผู้คนที่ไม่สนใจปัญหาเหล่านี้ทิ้งขยะทั่วเมืองจนเมื้องนี้มีแต่ขยะเหมือนเดิม<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
@@ -307,12 +307,12 @@
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
       document.getElementById('background').style.backgroundSize = "auto 100%";
-          introduce == 6;
+          introduce = 6;
         }
       }
       if(introduce == 6){
 			//ไปเว็บต่อไป landing
-        //location.replace("https://mesamesamesamesa.github.io/greenpeace-game/introduce")
+        location.replace("https://plastic-landing.netlify.app/landing");
       }
     }
     
