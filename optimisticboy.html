@@ -96,6 +96,9 @@
       background:white;
       font-family: 'Prompt';
       font-weight:bold;
+      /*display:block;
+      margin-bottom:0px;*/
+      
     }
     /*.actionbox{
 		position:relative;
@@ -160,16 +163,6 @@
 		display:none;
       background:white;
     }
-    #scene{
-		background:red;
-      display:block;
-    }
-    #scene2{
-
-    }
-    #scene3{
-
-    }
     
     #border{
 		/*display:none;*/
@@ -196,37 +189,6 @@
 		border:2px solid black;
       display:none;
     }
-    #FirstUI{
-		text-align:left;
-    }
-    #SecondUI{
-      text-align:center;
-    }
-    #ThirdUI{
-      
-		text-align:right;
-    }
-    /*<body>
-  <div id="backgound">
-    
-  
-  <div id="border" class="show">
-  <h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะ
-กำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาจะต้องพยายามชักจูงผู้คนมาช่วยกันทำความ
-สะอาดและจะต้องทำงานหาเงินมาด้วย</h1>
-    <p2 onclick ="next()">Next</p2>
-  </div>
-  <div id="UIgame"></div>
-  <div id="action1" onclick='takeaction(1)'>asa</div>
-  <div id="action2" onclick='takeaction(2)'>share</div>
-    <div id="action3" onclick='takeaction(3)'>parttime</div>
-  <div id="scene"></div>
-  </div>
-</body>*/
-    
-    /*<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะ
-กำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาจะต้องพยายามชักจูงผู้คนมาช่วยกันทำความ
-สะอาดและจะต้องทำงานหาเงินมาด้วย</h1><p2 onclick ="next()">Next</p2>*/
     
   </style>
 </head>
@@ -274,6 +236,7 @@
       "<div style='text-align:left'><p1 class=\"subhead\">เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
       "<div style='text-align:left'><p1 class=\"subhead\">ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
       "<div style='text-align:left'><p1 class=\"subhead\">เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
+         document.getElementsByClassName('show')[0].style.top= "150px";
         
       }
       else if(introduce == 1 && step == 2){
@@ -282,6 +245,7 @@
       "<div style='text-align:left'><p1 class=\"subhead\">อาสา</p1> :<p1 class=\"inhead\">กำจัดขยะ เพิ่มชื่อเสียงให้กับคุณ แต่ก็ต้องใช้เงินซื้ออุปกรณ์</p1></div>" +
 		"<div style='text-align:left'><p1 class=\"subhead\">แชร์</p1> : <p1 class=\"inhead\">เพิ่มผู้สนับสนุน ยิ่งผู้สนับสนุนเยอะการกำจัดขยะจะเร็วขึ้น</p1></div>" +
       "<div style='text-align:left'><p1 class=\"subhead\">พาร์ทไทม์</p1> : <p1 class=\"inhead\">ทำงานพาร์ทไทม์เพื่อหาเงิน</p1></div>";
+        document.getElementsByClassName('show')[0].style.top= "220px";
 
       }
       else if(introduce == 2){
