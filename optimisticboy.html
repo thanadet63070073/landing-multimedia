@@ -366,11 +366,16 @@
         reputation = reputation + people;
       	time.phase = time.phase + 1;
       calculatetime();
-      if(junk <= 0){
+      if(junk <= 0 && unfollower > 0){
         junk = 0;
         document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
             "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
+        else if(junk <= 0 && unfollower <= 0){
+          junk = 0;
+          final = 1;
+          next();
+		}
       else{
 			document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
             "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
@@ -404,12 +409,17 @@
       unfollower = 250 - follower;
       time.phase = time.phase + 1;
       calculatetime();
-      if(unfollower <= 0){
+      if(unfollower <= 0 && junk > 0){
         follower = 250;
         unfollower = 0;
       document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+"คน</span>"+"<span class='center'>เงิน:"+" "+money+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
             "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>"; 
       }
+      else if(junk <= 0 && unfollower <= 0){
+          junk = 0;
+          final = 1;
+          next();
+		}
       else{
 		document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
             "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+ state +"</span></p></div>";
