@@ -1,4 +1,6 @@
 <html>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap" rel="stylesheet">
 <head>
 <style>
     body{
@@ -47,20 +49,30 @@
   }
   .action{
     font-size:40px;
+    font-family: 'Prompt';
+      font-weight:bold;
 }
   .head{
 	font-size:40px;
+    font-family: 'Prompt';
+      font-weight:bold;
   }
   .subhead{
 	font-size:30px;
+   font-family: 'Prompt';
+      font-weight:bold;
   }
   .inhead{
 	font-size:25px;
+   font-family: 'Prompt';
+      font-weight:bold;
   }
   
   p{
   font-size:24px;
   color:black;
+  font-family: 'Prompt';
+      font-weight:bold;
   }
   p2{
       border:2px solid black;
@@ -69,6 +81,8 @@
       font-size:24px;
 		color:black;
       cursor: pointer;
+      font-family: 'Prompt';
+      font-weight:bold;
     }
     .show{
 		position:relative;
@@ -80,6 +94,8 @@
       padding:10px;
       text-align:center;
       background:white;
+      font-family: 'Prompt';
+      font-weight:bold;
     }
     /*.actionbox{
 		position:relative;
@@ -217,25 +233,23 @@
 <body>
 <div id="background">
 <div id="border" class="show">
-<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะ
-กำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาจะต้องพยายามชักจูงผู้คนมาช่วยกันทำความ
-สะอาดและจะต้องทำงานหาเงินมาด้วย</h1>
+<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาจะต้องพยายามชักจูงผู้คนมาช่วยกันทำความสะอาดและจะต้องทำงานหาเงินมาด้วย</h1>
 <p2 onclick="next()">Next</p2>
 </div>
 <div id="UIgame"></div>
-<div class="action" id="action1" onclick='takeaction(1)'>อาสา(-300Money +Reputation)</div>
-<div class="action" id="action2" onclick='takeaction(2)'>แชร์(+Follower)</div>
-<div class="action" id="action3" onclick='takeaction(3)'>พาร์ทไทม์(+200Money)</div>
+<div class="action" id="action1" onclick='takeaction(1)'>อาสา(-300เงิน, +ชื่อเสียง)</div>
+<div class="action" id="action2" onclick='takeaction(2)'>แชร์(+ผู้สนับสนุน)</div>
+<div class="action" id="action3" onclick='takeaction(3)'>พาร์ทไทม์(+200เงิน)</div>
 <div id="scene"></div>
 </div>
 </body>
 <script>
-    var success = "<div><p><span class='left'> Unfollower: 220 คน</span>\
-        <span class='center'>Money:500 บาท\
-        </span><span class='right'>Junk: 500</span></p></div>" +
+    var success = "<div><p><span class='left'> ผู้เพิกเฉย: 220 คน</span>\
+        <span class='center'>เงิน:500 บาท\
+        </span><span class='right'>ขยะ: 500</span></p></div>" +
 		  "<br><div><p><span class='left'> Follower: 30 คน</span>\
-        <span class='center2'>Reputation: 10\
-        </span><span class='right'>Time: วันที่ 1 เช้า</span></p></div>";
+        <span class='center2'>ชื่อเสียง: 10\
+        </span><span class='right'>เวลา: วันที่ 1 เช้า</span></p></div>";
     var final = 0;
     var action = 0;
     var introduce = 1;
@@ -253,36 +267,36 @@
     function next(){
       if(introduce == 1 && step == 1){
         step = step + 1;
-			document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">How to play </p1></div>" + 
-      "<div style='text-align:left'><p1 class=\"subhead\">Follower </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
-		"<div style='text-align:left'><p1 class=\"subhead\">Unfollower </p1>:<p1 class=\"inhead\">ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">Junk </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">Money </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">Reputation </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">Time :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
+			document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">วิธีเล่น </p1></div>" + 
+      "<div style='text-align:left'><p1 class=\"subhead\">ผู้สนับสนุน </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
+		"<div style='text-align:left'><p1 class=\"subhead\">ผู้เพิกเฉย </p1>:<p1 class=\"inhead\"> ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\">ขยะ </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\">เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\">ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\">เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
         
       }
       else if(introduce == 1 && step == 2){
         introduce = introduce + 1;
-        document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">How to play</p1> </div>" + 
-      "<div style='text-align:left'><p1 class=\"subhead\">อาสา</p1> :<p1 class=\"inhead\"> เพิ่ม Reputation ให้กับคุณ แต่ก็ต้องใช้เงินซื้ออุปกรณ์</p1></div>" +
-		"<div style='text-align:left'><p1 class=\"subhead\">แชร์</p1> : <p1 class=\"inhead\">เพิ่ม Follower ยิ่ง Follower เยอะการกำจัดขยะจะเร็วขึ้น</p1></div>" +
+        document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">วิธีเล่น</p1> </div>" + 
+      "<div style='text-align:left'><p1 class=\"subhead\">อาสา</p1> :<p1 class=\"inhead\">กำจัดขยะ เพิ่มชื่อเสียงให้กับคุณ แต่ก็ต้องใช้เงินซื้ออุปกรณ์</p1></div>" +
+		"<div style='text-align:left'><p1 class=\"subhead\">แชร์</p1> : <p1 class=\"inhead\">เพิ่มผู้สนับสนุน ยิ่งผู้สนับสนุนเยอะการกำจัดขยะจะเร็วขึ้น</p1></div>" +
       "<div style='text-align:left'><p1 class=\"subhead\">พาร์ทไทม์</p1> : <p1 class=\"inhead\">ทำงานพาร์ทไทม์เพื่อหาเงิน</p1></div>";
 
       }
       else if(introduce == 2){
          introduce = introduce + 1;
-			document.getElementById('txt').innerHTML = "<p1 class=\"head\">Goal</p1><br>คุณจะต้องกำจัดขยะทั้งหมดออกไปจากเมืองนี้เพื่อให้เมืองนี้ยังคงสะอาดและต้องเพิ่ม Follower ทั้งหมด 125 คน เพื่อให้พวกเขามา support คุณ";
+			document.getElementById('txt').innerHTML = "<p1 class=\"head\">เป้าหมาย</p1><br>คุณจะต้องกำจัดขยะทั้งหมดออกไปจากเมืองนี้เพื่อให้เมืองนี้ยังคงสะอาดและต้องมีผู้สนับสนุนทั้งหมด 125 คน เพื่อให้พวกเขามาสนับสนุนคุณ โดยคุณมีเวลาทั้งหมด 7 วัน แต่ละวันมี 3 ช่วงเวลา คือ เช้า กลางวัน เย็น";
       }
       else if(introduce == 3){
         document.getElementById('border').style.display = "none";
         document.getElementById('UIgame').style.display = "block";
-        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'> Unfollower: 220 คน</span>\
-        <span class='center'>Money: 500 บาท\
-        </span><span class='right'>Junk: 500</span></p></div>" +
-		  "<br><div><p><span class='left'> Follower: 30 คน</span>\
-        <span class='center2'>Reputation: 10\
-        </span><span class='right'>Time: วันที่ 1 เช้า</span></p></div>";
+        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'> ผู้เพิกเฉย: 220 คน</span>\
+        <span class='center'>เงิน: 500 บาท\
+        </span><span class='right'>ขยะ: 500</span></p></div>" +
+		  "<br><div><p><span class='left'> ผู้สนับสนุน: 30 คน</span>\
+        <span class='center2'>ชื่อเสียง: 10\
+        </span><span class='right'>เวลา: วันที่ 1 เช้า</span></p></div>";
         document.getElementById('action1').style.display = "block";
         document.getElementById('action2').style.display = "block";
         document.getElementById('action3').style.display = "block";
@@ -303,7 +317,7 @@
        }
       if(final == 1){
         if(junk == 0 && follower >= 125){
-        document.getElementById('txt').innerHTML = "Win<br> คุณกำจัดขยะออกไปจากเมืองทั้งหมด<br> ร่วมเป็นส่วนหนึ่งในการกำจัดขยะพลาสติก";
+        document.getElementById('txt').innerHTML = "ชนะ<br> คุณกำจัดขยะออกไปจากเมืองทั้งหมด<br> ร่วมเป็นส่วนหนึ่งในการกำจัดขยะพลาสติก";
         	document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845589961255944223/444.jpg?width=883&height=559)";//ฉากจบ
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
@@ -311,7 +325,7 @@
           introduce = introduce + 1;
         }
         else if(junk > 0){
-			document.getElementById('txt').innerHTML = "Lose<br>คุณกำจัดขยะไม่หมด<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
+			document.getElementById('txt').innerHTML = "แพ้<br>คุณกำจัดขยะไม่หมด<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
         	document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845589959086702592/333.jpg?width=821&height=559)";//ฉากจบ
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
@@ -319,7 +333,7 @@
           introduce = introduce + 1;
         }
         else if(junk == 0 && follower < 125){
-			document.getElementById('txt').innerHTML = "Lose<br>คุณกำจัดขยะหมดแต่ก็ยังมีผู้คนที่ไม่สนใจปัญหาเหล่านี้ทิ้งขยะทั่วเมืองจนเมื้องนี้มีแต่ขยะเหมือนเดิม<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
+			document.getElementById('txt').innerHTML = "แพ้<br>คุณกำจัดขยะหมดแต่ก็ยังมีผู้คนที่ไม่สนใจปัญหาเหล่านี้ทิ้งขยะทั่วเมืองจนเมื้องนี้มีแต่ขยะเหมือนเดิม<br>แต่คุณยังสามารถเป็นส่วนหนึ่งในการกำจัดขยะพลาสติกได้";
         	document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845589959086702592/333.jpg?width=821&height=559)";//ฉากจบ
           document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
@@ -386,12 +400,12 @@
       calculatetime();
       if(junk <= 0){
         junk = 0;
-        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>Unfollower:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>Money:"+" "+money+" "+"บาท</span>"+"<span class='right'>Junk:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>Follower:"+" "+follower+" "+"คน</span>"+"<span class='center2'>Reputation:"+" "+reputation+"</span>"+"<span class='right'>Time: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
+        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
       else{
-			document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>Unfollower:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>Money:"+" "+money+" "+"บาท</span>"+"<span class='right'>Junk:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>Follower:"+" "+follower+" "+"คน</span>"+"<span class='center2'>Reputation:"+" "+reputation+"</span>"+"<span class='right'>Time: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
+			document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
       
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845217790352556032/happy-volunteers-collecting-garbage-city-park_179970-771.jpg)";
@@ -405,7 +419,7 @@
       document.getElementById('action3').style.display = "none";
       document.getElementById('border').style.display = "block";
       document.getElementById('UIgame').style.display = "none";
-      document.getElementById('txt').innerHTML = "คุณได้ทำอาสาพร้อมกับ Follower";
+      document.getElementById('txt').innerHTML = "คุณได้ทำอาสาพร้อมกับผู้สนับสนุน";
       if(time.day == 8){
         introduce = 5;
 			final = 1;
@@ -424,12 +438,12 @@
       if(unfollower <= 0){
         follower = 250;
         unfollower = 0;
-      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>Unfollower:"+" "+unfollower+"คน</span>"+"<span class='center'>Money:"+" "+money+ "บาท</span>"+"<span class='right'>Junk:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>Follower:"+" "+follower+"คน</span>"+"<span class='center2'>Reputation:"+" "+reputation+"</span>"+"<span class='right'>Time: วันที่ "+" "+ time.day+" "+state +"</span></p></div>"; 
+      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+"คน</span>"+"<span class='center'>เงิน:"+" "+money+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>"; 
       }
       else{
-		document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>Unfollower:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>Money:"+" "+money+" "+ "บาท</span>"+"<span class='right'>Junk:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>Follower:"+" "+follower+" "+"คน</span>"+"<span class='center2'>Reputation:"+" "+reputation+"</span>"+"<span class='right'>Time: วันที่ "+" "+ time.day+" "+ state +"</span></p></div>";
+		document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+ state +"</span></p></div>";
       }
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845594665365405716/unknown.png)";
       document.getElementById('background').style.backgroundRepeat = "no-repeat";
@@ -455,8 +469,8 @@
 		money = money + 200;
       time.phase = time.phase + 1;
       calculatetime();
-      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>Unfollower:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>Money:"+" "+money+ " "+"บาท</span>"+"<span class='right'>Junk:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>Follower:"+" "+follower+" "+"คน</span>"+"<span class='center2'>Reputation:"+" "+reputation+"</span>"+"<span class='right'>Time: วันที่"+" "+ time.day+" " +state +"</span></p></div>";
+      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+ " "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่"+" "+ time.day+" " +state +"</span></p></div>";
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/844939204869619732/konbini.png?width=364&height=559)";
       document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
@@ -469,7 +483,7 @@
       document.getElementById('action3').style.display = "none";
       document.getElementById('border').style.display = "block";
       document.getElementById('UIgame').style.display = "none";
-      document.getElementById('txt').innerHTML = "คุณทำงาน Part-Time";
+      document.getElementById('txt').innerHTML = "คุณทำงานพาร์ทไทม์";
       if(time.day == 8){
         introduce = 5;
 			final = 1;
