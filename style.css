@@ -185,11 +185,17 @@ a{
     }
 }
 
+.three-contain{
+    width:100%;
+    height:100%;
+    background:red;
+}
+
 .material-contain-1 {
     padding: 5%;
     margin: auto;
     width: 80%;
-    height: auto;
+    height: 80%;
     /* background-image:url("https://www.nicepng.com/png/full/49-498173_gradient-background-png-website-background-image-png.png"); */
     background-repeat:no-repeat;
     border-radius: 10px;
