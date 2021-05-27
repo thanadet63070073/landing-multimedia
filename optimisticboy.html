@@ -2,6 +2,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap" rel="stylesheet">
 <head>
+  <h1 id="testtest">
+  </h1>
 <style>
     body{
     }
@@ -72,14 +74,14 @@
   font-size:24px;
   color:black;
   font-family: 'Prompt';
-      font-weight:bold;
+    font-weight:bold;
   }
   p2{
-      border:2px solid black;
+      border:3px solid #672d2b;
       padding:2px;
       text-align:center;
       font-size:24px;
-		color:black;
+      
       cursor: pointer;
       font-family: 'Prompt';
       font-weight:bold;
@@ -89,11 +91,11 @@
       top:250px;
       margin:auto;
       color:black;
-		border:5px solid black;
+		border:5px solid #67b8b2;
       border-radius: 30px 30px 30px 30px;
       padding:10px;
       text-align:center;
-      background:white;
+      background:#fdede0;
       font-family: 'Prompt';
       font-weight:bold;
       /*display:block;
@@ -111,46 +113,47 @@
       cursor: pointer;
     }*/
     #action1{
+        border:5px solid #67b8b2;
       position:relative;
       top:250px;
       margin:50px;
       color:black;
-		border:5px solid black;
       padding:10px;
       text-align:center;
       cursor: pointer;
 		display:none;
-      background:white;
+      background:#fdede0;
       margin-left:auto;
       margin-right:auto;
       width:750px;
     }
     #action2{
+    border:5px solid #67b8b2;
       position:relative;
       top:250px;
       margin:50px;
       color:black;
-		border:5px solid black;
-      padding:10px;
+        padding:10px;
       text-align:center;
       cursor: pointer;
 		display:none;
-      background:white;
+      background:#fdede0;
       margin-left:auto;
       margin-right:auto;
+      
       width:750px;
     }
     #action3{
+    border:5px solid #67b8b2;
       position:relative;
       top:250px;
       margin:50px;
       color:black;
-		border:5px solid black;
       padding:10px;
       text-align:center;
       cursor: pointer;
 		display:none;
-      background:white;
+      background:#fdede0;
       margin-left:auto;
       margin-right:auto;
       width:750px;
@@ -170,16 +173,36 @@
     #UIgame{
       position:absolute;
       width:95%;
-      height:15%;
+      height:17.5%;
       top:10px;
       left:2.5%;
       margin:auto;
-		border:2px solid black;
+      border:5px solid #67b8b2;
       border-radius:30px 30px 30px 30px;
       display:none;
-      background:white;
+      background: #fdede0;
     }
-  	#UIgame2{
+  #back{
+    border:3px solid #672d2b;
+      padding:2px;
+      text-align:center;
+      font-size:24px;
+		color:black;
+      cursor: pointer;
+      font-family: 'Prompt'; 
+      font-weight:bold;
+    	display:none;
+}
+p2:hover,#back:hover,#action1:hover,#action2:hover,#action3:hover{
+    color:white;
+    background: rgb(239,157,71);
+    background: linear-gradient(90deg, rgba(239,157,71,1) 30%, rgba(240,149,66,1) 73%, rgba(240,150,67,1) 100%);
+}
+span {
+  background-color: #eacfb4;
+  border-radius: 50px 50px 50px 50px;
+}
+  	/*#UIgame2{
       position:absolute;
       width:95%;
       height:10%;
@@ -188,14 +211,32 @@
       margin:auto;
 		border:2px solid black;
       display:none;
-    }
-    
+    }*/
+  #warn{
+    position:absolute;
+    top:180px;
+    left:40%;
+    display:none;
+    color: #CEF0D4; 
+    font-family: 'Rouge Script',cursive; 
+    font-size: 50px; 
+    font-weight: normal; 
+    line-height: 48px; 
+    margin: 0 0 50px; 
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+    border:0px solid black;
+    width:20%;
+
+  }
+  
   </style>
 </head>
 <body>
 <div id="background">
 <div id="border" class="show">
-<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาจะต้องพยายามชักจูงผู้คนมาช่วยกันทำความสะอาดและจะต้องทำงานหาเงินมาด้วย</h1>
+<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาต้องการคนมาช่วยสนับสนุนเค้าในการทำความสะอาดและใช้เงินทุนของตัวเองจากงานpart time ในการทำความสะอาดแต่ละครั้ง</h1>
+  <p2 id="back" onclick="back()">Back</p2>
 <p2 onclick="next()">Next</p2>
 </div>
 <div id="UIgame"></div>
@@ -203,6 +244,9 @@
 <div class="action" id="action2" onclick='takeaction(2)'>แชร์(+ผู้สนับสนุน)</div>
 <div class="action" id="action3" onclick='takeaction(3)'>พาร์ทไทม์(+200เงิน)</div>
 <div id="scene"></div>
+  <h1 id="warn">
+    
+  </h1>
 </div>
 </body>
 <script>
@@ -223,19 +267,22 @@
     var junk = 500;
     var time = {day:1, phase:1};
   	 var state = 'เช้า';
+  	var num = 1;
     function start(){
 		document.getElementById('Start').innerHTML = "Test";
     }
     function next(){
       if(introduce == 1 && step == 1){
+        
         step = step + 1;
 			document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">วิธีเล่น </p1></div>" + 
-      "<div style='text-align:left'><p1 class=\"subhead\">ผู้สนับสนุน </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
-		"<div style='text-align:left'><p1 class=\"subhead\">ผู้เพิกเฉย </p1>:<p1 class=\"inhead\"> ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">ขยะ </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\">เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'>ผู้สนับสนุน </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
+		"<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'>ผู้เพิกเฉย </p1>:<p1 class=\"inhead\"> ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'>ขยะ </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'>เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'>ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'>เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
+        document.getElementById('back').style.display = "inline";
          document.getElementsByClassName('show')[0].style.top= "150px";
         
       }
@@ -255,15 +302,16 @@
       else if(introduce == 3){
         document.getElementById('border').style.display = "none";
         document.getElementById('UIgame').style.display = "block";
-        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'> ผู้เพิกเฉย: 220 คน</span>\
-        <span class='center'>เงิน: 500 บาท\
-        </span><span class='right'>ขยะ: 500</span></p></div>" +
-		  "<br><div><p><span class='left'> ผู้สนับสนุน: 30 คน</span>\
-        <span class='center2'>ชื่อเสียง: 10\
-        </span><span class='right'>เวลา: วันที่ 1 เช้า</span></p></div>";
+        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย: 220 คน</span>\
+        <span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน: 500 บาท\
+        </span><span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ: 500</span></p></div>" +
+		  "<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน: 30 คน</span>\
+        <span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง: 10\
+        </span><span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ 1 เช้า</span></p></div>";
         document.getElementById('action1').style.display = "block";
         document.getElementById('action2').style.display = "block";
         document.getElementById('action3').style.display = "block";
+        document.getElementById('back').style.display = "none";
         /*document.body.style.background = "red";*/
         introduce = introduce + 1;
         
@@ -274,6 +322,14 @@
          document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845596758678831104/wpid-vlcsnap-2014-11-27-06h57m36s102.png?width=994&height=559)"; //อันนี้ scene หมู่บ้าน
          document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundSize = "cover";
+          if(time.phase == 1){
+				document.getElementById("warn").style.display = "block";
+            document.getElementById("warn").style.opacity = 1;
+            num = 1;
+      		document.getElementById("warn").innerHTML = "วันที่"+" "+time.day;
+      /*setTimeout(timewarn, 4000);*/
+      setInterval(fade, 1000);
+      }
          document.getElementById('action1').style.display = "block";
       document.getElementById('action2').style.display = "block";
       document.getElementById('action3').style.display = "block";
@@ -313,6 +369,32 @@
        location.replace("https://power-of-youth.netlify.app/powerofyouth");
       }
     }
+  
+  
+  
+  function back(){
+    if(introduce == 1 && step == 2){
+      step = step - 1;
+      document.getElementById('txt').innerHTML = "โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาต้องการคนมาช่วยสนับสนุนเค้าในการทำความสะอาดและใช้เงินทุนของตัวเองจากงานpart timeในการทำความสะอาดแต่ละครั้ง";
+      document.getElementById('back').style.display = "none";
+      document.getElementsByClassName('show')[0].style.top= "250px";
+    }
+    else if(introduce == 2){
+		introduce = introduce - 1;
+      step = step -1;
+      next();
+    }
+    else if(introduce == 3){
+		introduce = introduce - 2;
+      next();
+    }
+    else{
+      document.getElementById("testtest").innerHTML = "Enter else condition"+introduce+" " + step;
+      }
+    /*introduce = introduce - 1;*/
+    /*document.getElementById("testtest").innerHTML ="final"+ introduce+" " + step;*/
+    /*next();*/
+}
     
     
     function takeaction(action){
@@ -338,6 +420,8 @@
      }
     }
   
+
+  
   
   function calculatetime(){
     if(time.phase == 1){
@@ -358,6 +442,11 @@
     
   }
   
+/*  function timewarn(){
+     document.getElementById("warn").style.display = "none";
+    
+}*/
+  
     
     function action1(){
         people = Math.floor(Math.random() * 10) + 5;
@@ -368,8 +457,8 @@
       calculatetime();
       if(junk <= 0 && unfollower > 0){
         junk = 0;
-        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
+        document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
         else if(junk <= 0 && unfollower <= 0){
           junk = 0;
@@ -377,8 +466,8 @@
           next();
 		}
       else{
-			document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
+			document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
       
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845217790352556032/happy-volunteers-collecting-garbage-city-park_179970-771.jpg)";
@@ -412,8 +501,8 @@
       if(unfollower <= 0 && junk > 0){
         follower = 250;
         unfollower = 0;
-      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+"คน</span>"+"<span class='center'>เงิน:"+" "+money+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>"; 
+      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>"; 
       }
       else if(junk <= 0 && unfollower <= 0){
           junk = 0;
@@ -421,8 +510,8 @@
           next();
 		}
       else{
-		document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+" "+ "บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่ "+" "+ time.day+" "+ state +"</span></p></div>";
+		document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       }
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/845594665365405716/unknown.png)";
       document.getElementById('background').style.backgroundRepeat = "no-repeat";
@@ -449,8 +538,8 @@
 		money = money + 200;
       time.phase = time.phase + 1;
       calculatetime();
-      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'>ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'>เงิน:"+" "+money+ " "+"บาท</span>"+"<span class='right'>ขยะ:"+" "+junk+
-            "</span></p></div>"+"<br><div><p><span class='left'>ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'>ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'>เวลา: วันที่"+" "+ time.day+" " +state +"</span></p></div>";
+      document.getElementById('UIgame').innerHTML = "<div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย:"+" "+unfollower+" "+"คน</span>"+"<span class='center'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน:"+" "+money+" "+"บาท</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ:"+" "+junk+
+            "</span></p></div>"+"<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน:"+" "+follower+" "+"คน</span>"+"<span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง:"+" "+reputation+"</span>"+"<span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ "+" "+ time.day+" "+state +"</span></p></div>";
       document.getElementById('background').style.background = "url(https://media.discordapp.net/attachments/829318884309073930/844939204869619732/konbini.png?width=364&height=559)";
       document.getElementById('background').style.backgroundRepeat = "no-repeat";
       document.getElementById('background').style.backgroundPosition = "center";
@@ -470,5 +559,10 @@
 			final = 1;
       }
     }
+  function fade(){
+		num = num - 0.25
+		document.getElementById("warn").style.opacity=num;
+  }
   </script>
 </html>
+
