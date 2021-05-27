@@ -95,6 +95,14 @@ img {
     flex-direction: column;
 }
 
+@keyframes color-change{
+    0%{color:#ffffff;}
+    25%{color:#e9f5f9;}
+    50%{color:#92cbdf;}
+    75%{color:#51abcb;}
+    100%{color:#2596be;}
+}
+
 .all-cards {
     width: 100%;
     height:100%;
@@ -135,6 +143,7 @@ img {
 .why-pic{
     width:200px;
     height:200px;
+    /* box-shadow: black .5px .5px 1px; */
 }
 
 
