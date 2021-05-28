@@ -27,17 +27,17 @@
       left:5%;
     }
   .center {
-  float: right;
+  float: left;
 
   position: relative;
-  left: -45%; /* or right 50% */
+  left:25%; /* or right 50% */
   text-align: left;
 }
   .center2 {
-  float: right;
+  float: left;
 
   position: relative;
-  left: -45.5%; /* or right 50% */
+  left:25%; /* or right 50% */
   text-align: left;
 }
   .left{
@@ -46,8 +46,14 @@
   
   }
   .right{
-	float:right;
-
+	float:left;
+    left:46%; /* or right 50% */
+  text-align: left;
+  }
+  .right2{
+	float:left;
+    left:48%; /* or right 50% */
+  text-align: left;
   }
   .action{
     font-size:40px;
@@ -78,10 +84,9 @@
   }
   p2{
       border:3px solid #672d2b;
-      padding:2px;
       text-align:center;
       font-size:24px;
-      
+      padding: 2px 9px;
       cursor: pointer;
       font-family: 'Prompt';
       font-weight:bold;
@@ -173,7 +178,8 @@
     #UIgame{
       position:absolute;
       width:95%;
-      height:17.5%;
+      /*height:17.5%;*/
+      height:15%;
       top:10px;
       left:2.5%;
       margin:auto;
@@ -184,7 +190,7 @@
     }
   #back{
     border:3px solid #672d2b;
-      padding:2px;
+    padding: 2px 9px;
       text-align:center;
       font-size:24px;
 		color:black;
@@ -199,6 +205,9 @@ p2:hover,#back:hover,#action1:hover,#action2:hover,#action3:hover{
     background: linear-gradient(90deg, rgba(239,157,71,1) 30%, rgba(240,149,66,1) 73%, rgba(240,150,67,1) 100%);
 }
 span {
+  position:relative;
+  margin:auto;
+  padding: 1px 15px 1px 15px;
   background-color: #eacfb4;
   border-radius: 50px 50px 50px 50px;
 }
@@ -235,7 +244,7 @@ span {
 <body>
 <div id="background">
 <div id="border" class="show">
-<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาต้องการคนมาช่วยสนับสนุนเค้าในการทำความสะอาดและใช้เงินทุนของตัวเองจากงานpart time ในการทำความสะอาดแต่ละครั้ง</h1>
+<h1 id="txt">โอ เด็กหนุ่มผู้มองโลกในแง่ดี เขามีปณิธานที่จะกำจัดขยะออกไปจากเมืองนี้ให้หมด โดยที่เขาต้องการคนมาช่วยสนับสนุน<br>ในการทำความสะอาดและใช้เงินทุนของตัวเองจากงาน part time ในการทำความสะอาดแต่ละครั้ง</h1>
   <p2 id="back" onclick="back()">Back</p2>
 <p2 onclick="next()">Next</p2>
 </div>
@@ -276,12 +285,12 @@ span {
         
         step = step + 1;
 			document.getElementById('txt').innerHTML = "<div style='text-align:center'><p1 class=\"head\">วิธีเล่น </p1></div>" + 
-      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'>ผู้สนับสนุน </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
-		"<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'>ผู้เพิกเฉย </p1>:<p1 class=\"inhead\"> ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'>ขยะ </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'>เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'>ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
-      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'>เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน </p1>:<p1 class=\"inhead\"> ผู้ที่คอยสนับสนุนและช่วยเหลือคุณทำอาสา</p1></div>" +
+		"<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724060935487508/man-gesturing-no-light-skin-tone_1f645-1f3fb-200d-2642-fe0f.png' width='30' height='30'> ผู้เพิกเฉย </p1>:<p1 class=\"inhead\"> ผู้ที่เมินปัญหาขยะในเมืองไม่สนใจและไม่ใส่ใจเกี่ยวกับสิ่งนี้</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ </p1>:<p1 class=\"inhead\"> จำนวนขยะในเมือง</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724064264978492/money-bag_1f4b0.png' width='30' height='30'> เงิน </p1>:<p1 class=\"inhead\"> เงินที่คุณมี</p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง </p1>:<p1 class=\"inhead\"> ชื่อเสียงจากการที่คุณทำอาสาทำให้สังคมมองคุณในด้านดี </p1></div>" +
+      "<div style='text-align:left'><p1 class=\"subhead\"><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา :<p1 class=\"inhead\"> เวลาปัจจุบัน</p1></div>";
         document.getElementById('back').style.display = "inline";
          document.getElementsByClassName('show')[0].style.top= "150px";
         
@@ -297,7 +306,7 @@ span {
       }
       else if(introduce == 2){
          introduce = introduce + 1;
-			document.getElementById('txt').innerHTML = "<p1 class=\"head\">เป้าหมาย</p1><br>คุณจะต้องกำจัดขยะทั้งหมดออกไปจากเมืองนี้เพื่อให้เมืองนี้ยังคงสะอาดและต้องมีผู้สนับสนุนอย่างน้อย 125 คน เพื่อให้พวกเขามาสนับสนุนคุณ โดยคุณมีเวลาทั้งหมด 7 วัน แต่ละวันมี 3 ช่วงเวลา คือ เช้า กลางวัน เย็น";
+			document.getElementById('txt').innerHTML = "<p1 class=\"head\">เป้าหมาย</p1><br>คุณจะต้องกำจัดขยะทั้งหมดออกไปจากเมืองนี้เพื่อให้เมืองนี้ยังคงสะอาด<br>และต้องมีผู้สนับสนุนอย่างน้อย 125 คน โดยคุณมีเวลาทั้งหมด 7 วัน <br>แต่ละวันมี 3 ช่วงเวลา คือ เช้า กลางวัน เย็น";
       }
       else if(introduce == 3){
         document.getElementById('border').style.display = "none";
@@ -307,7 +316,7 @@ span {
         </span><span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724067297853490/wastebasket_1f5d1-fe0f.png' width='30' height ='30'> ขยะ: 500</span></p></div>" +
 		  "<br><div><p><span class='left'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724063236718623/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png' width ='30' height='30'> ผู้สนับสนุน: 30 คน</span>\
         <span class='center2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724070334267392/eight-pointed-star_2734-fe0f.png' width='30' height='30'> ชื่อเสียง: 10\
-        </span><span class='right'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ 1 เช้า</span></p></div>";
+        </span><span class='right2'><img src='https://cdn.discordapp.com/attachments/829318884309073930/846724065804025866/stopwatch_23f1-fe0f.png' width='30' height ='30'> เวลา: วันที่ 1 เช้า</span></p></div>";
         document.getElementById('action1').style.display = "block";
         document.getElementById('action2').style.display = "block";
         document.getElementById('action3').style.display = "block";
@@ -565,4 +574,3 @@ span {
   }
   </script>
 </html>
-
