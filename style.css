@@ -107,11 +107,12 @@ img {
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .card{
     position: relative;
+    margin: 20px;
 }
 
 .face{
